@@ -1,0 +1,156 @@
+/* Logseq Publisher Styles */
+
+:root {
+    --bg-color: #ffffff;
+    --text-color: #2d3748;
+    --link-color: #3182ce;
+    --border-color: #e2e8f0;
+    --tag-bg: #edf2f7;
+    --block-border: #cbd5e0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--bg-color);
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header {
+    margin-bottom: 3rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin: 1.5rem 0 1rem;
+}
+
+.stats {
+    color: #718096;
+    font-size: 0.95rem;
+}
+
+.page-list {
+    list-style: none;
+    padding: 0;
+}
+
+.page-list li {
+    margin: 0.5rem 0;
+}
+
+.page-list a {
+    color: var(--link-color);
+    text-decoration: none;
+    padding: 0.5rem;
+    display: block;
+    border-radius: 0.25rem;
+    transition: background 0.2s;
+}
+
+.page-list a:hover {
+    background: #ebf8ff;
+}
+
+nav {
+    margin-bottom: 2rem;
+}
+
+nav a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.block {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.block-content {
+    padding: 0.25rem 0;
+}
+
+.block-children {
+    margin-left: 1rem;
+    border-left: 2px solid var(--block-border);
+    padding-left: 1rem;
+}
+
+.wiki-link {
+    color: var(--link-color);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--link-color);
+}
+
+.wiki-link:hover {
+    background: #ebf8ff;
+    border-bottom-style: solid;
+}
+
+.tag {
+    background: var(--tag-bg);
+    padding: 0.125rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    margin: 0 0.25rem;
+    white-space: nowrap;
+}
+
+.properties {
+    background: #f7fafc;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+    font-size: 0.875rem;
+}
+
+.backlinks {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--border-color);
+}
+
+.backlinks ul {
+    list-style: none;
+    padding: 0;
+}
+
+.backlinks li {
+    margin: 0.5rem 0;
+}
+
+code {
+    background: #f7fafc;
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.25rem;
+    font-family: 'Monaco', 'Courier New', monospace;
+    font-size: 0.875rem;
+}
+
+footer {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    color: #718096;
+    font-size: 0.875rem;
+}

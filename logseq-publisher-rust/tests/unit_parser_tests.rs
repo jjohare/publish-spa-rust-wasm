@@ -217,7 +217,7 @@ fn test_link_resolver_with_namespaces() {
 #[cfg(test)]
 mod property_tests {
     use super::*;
-    use quickcheck::{quickcheck, TestResult};
+    use quickcheck::TestResult;
     use quickcheck_macros::quickcheck;
 
     #[quickcheck]

@@ -1,0 +1,17 @@
+# Cargo configuration for WASM builds
+
+[build]
+target = "wasm32-unknown-unknown"
+
+[target.wasm32-unknown-unknown]
+rustflags = [
+    "-C", "link-arg=-s",  # Strip symbols for smaller binary
+]
+
+[profile.release]
+# Optimize for size
+opt-level = "z"
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true

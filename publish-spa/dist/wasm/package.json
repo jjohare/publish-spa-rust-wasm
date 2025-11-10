@@ -1,0 +1,15 @@
+{
+  "name": "publish-spa-wasm",
+  "version": "1.0.0",
+  "type": "module",
+  "files": [
+    "publish_spa_wasm_bg.wasm",
+    "publish_spa_wasm.js",
+    "publish_spa_wasm.d.ts"
+  ],
+  "main": "publish_spa_wasm.js",
+  "types": "publish_spa_wasm.d.ts",
+  "dependencies": {
+    "glob": "^10.3.10"
+  }
+}

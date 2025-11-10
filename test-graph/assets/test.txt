@@ -1,0 +1,12 @@
+This is a test asset file.
+
+It can be referenced from pages and should be copied to the output directory during publishing.
+
+Asset types supported:
+- Text files (.txt)
+- Images (.png, .jpg, .gif, .svg)
+- Documents (.pdf)
+- Archives (.zip)
+- Any other files
+
+This file tests that the asset copying mechanism works correctly.

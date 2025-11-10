@@ -1,0 +1,33 @@
+/* tslint:disable */
+/* eslint-disable */
+export const memory: WebAssembly.Memory;
+export const __wbg_get_publishstats_orphan_pages: (a: number) => number;
+export const __wbg_get_publishstats_page_count: (a: number) => number;
+export const __wbg_get_publishstats_total_blocks: (a: number) => number;
+export const __wbg_get_publishstats_total_links: (a: number) => number;
+export const __wbg_publishconfig_free: (a: number, b: number) => void;
+export const __wbg_publishstats_free: (a: number, b: number) => void;
+export const __wbg_set_publishstats_orphan_pages: (a: number, b: number) => void;
+export const __wbg_set_publishstats_page_count: (a: number, b: number) => void;
+export const __wbg_set_publishstats_total_blocks: (a: number, b: number) => void;
+export const __wbg_set_publishstats_total_links: (a: number, b: number) => void;
+export const get_backlinks: (a: number, b: number, c: number, d: number) => number;
+export const init: () => void;
+export const parse_graph: (a: number, b: number) => number;
+export const publish: (a: number) => number;
+export const publishconfig_include_backlinks: (a: number) => number;
+export const publishconfig_include_graph_view: (a: number) => number;
+export const publishconfig_new: (a: number, b: number, c: number, d: number) => number;
+export const publishconfig_set_include_backlinks: (a: number, b: number) => void;
+export const publishconfig_set_include_graph_view: (a: number, b: number) => void;
+export const publishconfig_set_theme: (a: number, b: number, c: number) => void;
+export const publishconfig_theme: (a: number, b: number) => void;
+export const __wasm_bindgen_func_elem_510: (a: number, b: number, c: number) => void;
+export const __wasm_bindgen_func_elem_495: (a: number, b: number) => void;
+export const __wasm_bindgen_func_elem_2869: (a: number, b: number, c: number, d: number) => void;
+export const __wbindgen_export: (a: number, b: number) => number;
+export const __wbindgen_export2: (a: number, b: number, c: number, d: number) => number;
+export const __wbindgen_export3: (a: number) => void;
+export const __wbindgen_export4: (a: number, b: number, c: number) => void;
+export const __wbindgen_add_to_stack_pointer: (a: number) => number;
+export const __wbindgen_start: () => void;

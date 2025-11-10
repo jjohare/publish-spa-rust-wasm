@@ -1,0 +1,25 @@
+{:meta/version 1
+
+ ;; Publishing configuration
+ :publishing/theme "auto"
+ :publishing/exclude-pages ["private" "drafts"]
+ :publishing/include-assets true
+ :publishing/generate-index true
+
+ ;; Graph settings
+ :preferred-format :markdown
+ :preferred-workflow :now
+
+ ;; Feature flags
+ :feature/enable-block-timestamps? true
+ :feature/enable-journals? true
+
+ ;; Default home page
+ :default-home {:page "index"}
+
+ ;; Outliner settings
+ :outliner/block-title-collapse-enabled? true
+
+ ;; Editor settings
+ :editor/show-brackets? false
+ :editor/logical-outdenting? true}

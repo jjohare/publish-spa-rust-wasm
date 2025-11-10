@@ -1,0 +1,84 @@
+{
+  "name": "@logseq/publish-spa",
+  "version": "1.0.0",
+  "description": "High-performance Rust WASM implementation of Logseq publish-spa - Convert your Logseq graph to a static website 10x faster",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "logseq-publish-spa": "dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build:wasm": "./build.sh",
+    "build": "npm run build:wasm",
+    "test": "cargo test",
+    "test:integration": "node test-integration.mjs",
+    "validate": "node validate-html.mjs",
+    "bench": "node benchmark.mjs",
+    "prepare": "npm run build:wasm",
+    "example:basic": "node examples/basic.mjs",
+    "example:advanced": "node examples/advanced.mjs",
+    "example:cli": "node examples/cli.mjs"
+  },
+  "files": [
+    "dist/",
+    "src/",
+    "Cargo.toml",
+    "build.sh",
+    ".cargo/",
+    "README.md",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "LICENSE",
+    "examples/",
+    "docs/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/logseq/publish-spa.git",
+    "directory": "publish-spa"
+  },
+  "keywords": [
+    "logseq",
+    "publish",
+    "static-site",
+    "static-site-generator",
+    "ssg",
+    "wasm",
+    "rust",
+    "markdown",
+    "graph",
+    "knowledge-graph",
+    "second-brain",
+    "note-taking",
+    "performance",
+    "fast",
+    "backlinks",
+    "wiki"
+  ],
+  "author": "Logseq Team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/logseq/publish-spa/issues"
+  },
+  "homepage": "https://github.com/logseq/publish-spa#readme",
+  "dependencies": {
+    "glob": "^10.3.10"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/logseq"
+  }
+}

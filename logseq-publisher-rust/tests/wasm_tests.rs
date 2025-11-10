@@ -1,7 +1,8 @@
 /// WASM-specific tests for browser compatibility
 /// Tests WASM bindings, browser APIs, and client-side functionality
 
-#![cfg(target_arch = "wasm32")]
+#[cfg(target_arch = "wasm32")]
+mod wasm_tests {
 
 use wasm_bindgen_test::*;
 use logseq_publisher_rust::wasm::{WasmPublisher, WasmGraph};
@@ -266,3 +267,5 @@ fn test_concurrent_parsing() {
     assert!(p2.is_some());
     assert!(p3.is_some());
 }
+
+} // End mod wasm_tests

@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>README</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="container">
+<nav><a href="../index.html">← Back to Index</a></nav>
+<article data-path="README.md">
+<h1>README</h1>
+<div class="tags">
+<span class="tag">#tag</span>
+</div>
+<div class="blocks">
+<div class="block" data-id="block-0-0" data-level="0">
+<div class="block-content"># Test Logseq Graph</div>
+</div>
+<div class="block" data-id="block-0-1" data-level="0">
+<div class="block-content">A comprehensive test graph for the publish-spa WASM implementation.</div>
+</div>
+<div class="block" data-id="block-0-2" data-level="0">
+<div class="block-content">## Graph Statistics</div>
+</div>
+<div class="block" data-id="block-0-3" data-level="0">
+<div class="block-content">### Pages</div>
+</div>
+<div class="block" data-id="block-0-4" data-level="0">
+<div class="block-content"><strong>Total Pages</strong>: 9</div>
+<div class="block-children">
+<div class="block" data-id="block-1-0" data-level="1">
+<div class="block-content">1 index page</div>
+</div>
+<div class="block" data-id="block-1-1" data-level="1">
+<div class="block-content">4 main documentation pages</div>
+</div>
+<div class="block" data-id="block-1-2" data-level="1">
+<div class="block-content">3 concept pages (nested)</div>
+</div>
+<div class="block" data-id="block-1-3" data-level="1">
+<div class="block-content">1 changelog page</div>
+</div>
+</div>
+</div>
+<div class="block" data-id="block-0-5" data-level="0">
+<div class="block-content">### Page Breakdown</div>
+</div>
+<div class="block" data-id="block-0-6" data-level="0">
+<div class="block-content">| Page | Path | Purpose | Links Out | Features Tested |</div>
+</div>
+<div class="block" data-id="block-0-7" data-level="0">
+<div class="block-content">|------|------|---------|-----------|-----------------|</div>
+</div>
+<div class="block" data-id="block-0-8" data-level="0">
+<div class="block-content">| Index | <code>pages/index.md</code> | Home page | 9 | Hub structure, overview, navigation |</div>
+</div>
+<div class="block" data-id="block-0-9" data-level="0">
+<div class="block-content">| Getting Started | <code>pages/getting-started.md</code> | Tutorial | 6 | Code blocks, nested content, steps |</div>
+</div>
+<div class="block" data-id="block-0-10" data-level="0">
+<div class="block-content">| Features | <code>pages/features.md</code> | Feature list | 8 | Rich formatting, tasks, code, nesting |</div>
+</div>
+<div class="block" data-id="block-0-11" data-level="0">
+<div class="block-content">| API Reference | <code>pages/api-reference.md</code> | Technical docs | 7 | Code examples, TypeScript, tables |</div>
+</div>
+<div class="block" data-id="block-0-12" data-level="0">
+<div class="block-content">| Changelog | <code>pages/changelog.md</code> | Version history | 5 | Timeline, performance data, migration |</div>
+</div>
+<div class="block" data-id="block-0-13" data-level="0">
+<div class="block-content">| Blocks | <code>pages/concepts/blocks.md</code> | Block concept | 5 | Deep nesting (10 levels), properties, references |</div>
+</div>
+<div class="block" data-id="block-0-14" data-level="0">
+<div class="block-content">| Pages | <code>pages/concepts/pages.md</code> | Page concept | 6 | Frontmatter, metadata, templates |</div>
+</div>
+<div class="block" data-id="block-0-15" data-level="0">
+<div class="block-content">| Links | <code>pages/concepts/links.md</code> | Linking concept | 10+ | All link types, bidirectional, aliases |</div>
+</div>
+<div class="block" data-id="block-0-16" data-level="0">
+<div class="block-content">### Content Statistics</div>
+</div>
+<div class="block" data-id="block-0-17" data-level="0">
+<div class="block-content"><strong>Total Links</strong>: 50+ internal wiki-links</div>
+</div>
+<div class="block" data-id="block-0-18" data-level="0">
+<div class="block-content"><strong>Total Tags</strong>: 30+ unique hashtags</div>
+</div>
+<div class="block" data-id="block-0-19" data-level="0">
+<div class="block-content"><strong>Code Blocks</strong>: 15+ with multiple languages (Rust, JavaScript, Python, TypeScript, Bash, YAML, Clojure)</div>
+</div>
+<div class="block" data-id="block-0-20" data-level="0">
+<div class="block-content"><strong>Nested Blocks</strong>: Up to 10 levels deep</div>
+</div>
+<div class="block" data-id="block-0-21" data-level="0">
+<div class="block-content"><strong>TODO Items</strong>: 10+ tasks in various states</div>
+</div>
+<div class="block" data-id="block-0-22" data-level="0">
+<div class="block-content"><strong>Assets</strong>: 1 test file in <code>assets/</code></div>
+</div>
+<div class="block" data-id="block-0-23" data-level="0">
+<div class="block-content">## Features Tested</div>
+</div>
+<div class="block" data-id="block-0-24" data-level="0">
+<div class="block-content">### 1. Frontmatter Parsing ✅</div>
+</div>
+<div class="block" data-id="block-0-25" data-level="0">
+<div class="block-content">Every page has YAML frontmatter with:</div>
+</div>
+<div class="block" data-id="block-0-26" data-level="0">
+<div class="block-content"><code>title</code> field</div>
+</div>
+<div class="block" data-id="block-0-27" data-level="0">
+<div class="block-content"><code>tags</code> array</div>
+</div>
+<div class="block" data-id="block-0-28" data-level="0">
+<div class="block-content">Optional <code>public</code> flag</div>
+</div>
+<div class="block" data-id="block-0-29" data-level="0">
+<div class="block-content">Various custom properties</div>
+</div>
+<div class="block" data-id="block-0-30" data-level="0">
+<div class="block-content">### 2. Wiki Links ✅</div>
+</div>
+<div class="block" data-id="block-0-31" data-level="0">
+<div class="block-content">Simple links: <code><a href="page-name.html" class="wiki-link">page-name</a></code></div>
+</div>
+<div class="block" data-id="block-0-32" data-level="0">
+<div class="block-content">Alias links: <code><a href="page|display text.html" class="wiki-link">page|display text</a></code></div>
+</div>
+<div class="block" data-id="block-0-33" data-level="0">
+<div class="block-content">Nested links: <code><a href="folder/page.html" class="wiki-link">folder/page</a></code></div>
+</div>
+<div class="block" data-id="block-0-34" data-level="0">
+<div class="block-content">50+ internal links across pages</div>
+</div>
+<div class="block" data-id="block-0-35" data-level="0">
+<div class="block-content">### 3. Hashtags ✅</div>
+</div>
+<div class="block" data-id="block-0-36" data-level="0">
+<div class="block-content">30+ unique tags</div>
+</div>
+<div class="block" data-id="block-0-37" data-level="0">
+<div class="block-content">In content: <code><span class="tag">#tag</span></code></div>
+</div>
+<div class="block" data-id="block-0-38" data-level="0">
+<div class="block-content">In frontmatter: <code>tags: tag1, tag2</code></div>
+</div>
+<div class="block" data-id="block-0-39" data-level="0">
+<div class="block-content">### 4. Block Nesting ✅</div>
+</div>
+<div class="block" data-id="block-0-40" data-level="0">
+<div class="block-content">Up to 10 levels deep</div>
+</div>
+<div class="block" data-id="block-0-41" data-level="0">
+<div class="block-content">Indentation-based hierarchy</div>
+</div>
+<div class="block" data-id="block-0-42" data-level="0">
+<div class="block-content">Mixed content types in nested blocks</div>
+</div>
+<div class="block" data-id="block-0-43" data-level="0">
+<div class="block-content">### 5. Code Blocks ✅</div>
+</div>
+<div class="block" data-id="block-0-44" data-level="0">
+<div class="block-content">Languages tested:</div>
+</div>
+<div class="block" data-id="block-0-45" data-level="0">
+<div class="block-content">Rust</div>
+</div>
+<div class="block" data-id="block-0-46" data-level="0">
+<div class="block-content">JavaScript</div>
+</div>
+<div class="block" data-id="block-0-47" data-level="0">
+<div class="block-content">TypeScript</div>
+</div>
+<div class="block" data-id="block-0-48" data-level="0">
+<div class="block-content">Python</div>
+</div>
+<div class="block" data-id="block-0-49" data-level="0">
+<div class="block-content">Bash</div>
+</div>
+<div class="block" data-id="block-0-50" data-level="0">
+<div class="block-content">YAML</div>
+</div>
+<div class="block" data-id="block-0-51" data-level="0">
+<div class="block-content">Clojure</div>
+</div>
+<div class="block" data-id="block-0-52" data-level="0">
+<div class="block-content">JSON</div>
+</div>
+<div class="block" data-id="block-0-53" data-level="0">
+<div class="block-content">### 6. Rich Formatting ✅</div>
+</div>
+<div class="block" data-id="block-0-54" data-level="0">
+<div class="block-content"><strong>Bold text</strong></div>
+</div>
+<div class="block" data-id="block-0-55" data-level="0">
+<div class="block-content"><em>Italic text</em></div>
+</div>
+<div class="block" data-id="block-0-56" data-level="0">
+<div class="block-content">~~Strikethrough~~</div>
+</div>
+<div class="block" data-id="block-0-57" data-level="0">
+<div class="block-content"><code>Inline code</code></div>
+</div>
+<div class="block" data-id="block-0-58" data-level="0">
+<div class="block-content">==Highlights==</div>
+</div>
+<div class="block" data-id="block-0-59" data-level="0">
+<div class="block-content">&gt; Block quotes</div>
+</div>
+<div class="block" data-id="block-0-60" data-level="0">
+<div class="block-content">### 7. Task Management ✅</div>
+</div>
+<div class="block" data-id="block-0-61" data-level="0">
+<div class="block-content">TODO items</div>
+</div>
+<div class="block" data-id="block-0-62" data-level="0">
+<div class="block-content">DOING items</div>
+</div>
+<div class="block" data-id="block-0-63" data-level="0">
+<div class="block-content">DONE items</div>
+</div>
+<div class="block" data-id="block-0-64" data-level="0">
+<div class="block-content">CANCELLED items</div>
+</div>
+<div class="block" data-id="block-0-65" data-level="0">
+<div class="block-content">### 8. Hierarchical Structure ✅</div>
+</div>
+<div class="block" data-id="block-0-66" data-level="0">
+<div class="block-content">```</div>
+</div>
+<div class="block" data-id="block-0-67" data-level="0">
+<div class="block-content">test-graph/</div>
+</div>
+<div class="block" data-id="block-0-68" data-level="0">
+<div class="block-content">├── pages/</div>
+</div>
+<div class="block" data-id="block-0-69" data-level="0">
+<div class="block-content">│   ├── index.md              (hub page)</div>
+</div>
+<div class="block" data-id="block-0-70" data-level="0">
+<div class="block-content">│   ├── getting-started.md    (tutorial)</div>
+</div>
+<div class="block" data-id="block-0-71" data-level="0">
+<div class="block-content">│   ├── features.md           (feature showcase)</div>
+</div>
+<div class="block" data-id="block-0-72" data-level="0">
+<div class="block-content">│   ├── api-reference.md      (technical docs)</div>
+</div>
+<div class="block" data-id="block-0-73" data-level="0">
+<div class="block-content">│   ├── changelog.md          (history)</div>
+</div>
+<div class="block" data-id="block-0-74" data-level="0">
+<div class="block-content">│   └── concepts/             (nested folder)</div>
+</div>
+<div class="block" data-id="block-0-75" data-level="0">
+<div class="block-content">│       ├── blocks.md</div>
+</div>
+<div class="block" data-id="block-0-76" data-level="0">
+<div class="block-content">│       ├── pages.md</div>
+</div>
+<div class="block" data-id="block-0-77" data-level="0">
+<div class="block-content">│       └── links.md</div>
+</div>
+<div class="block" data-id="block-0-78" data-level="0">
+<div class="block-content">├── assets/</div>
+</div>
+<div class="block" data-id="block-0-79" data-level="0">
+<div class="block-content">│   └── test.txt</div>
+</div>
+<div class="block" data-id="block-0-80" data-level="0">
+<div class="block-content">└── logseq/</div>
+<div class="block-children">
+<div class="block" data-id="block-1-0" data-level="2">
+<div class="block-content">└── config.edn</div>
+</div>
+</div>
+</div>
+<div class="block" data-id="block-0-81" data-level="0">
+<div class="block-content">```</div>
+</div>
+<div class="block" data-id="block-0-82" data-level="0">
+<div class="block-content">### 9. Bidirectional Links ✅</div>
+</div>
+<div class="block" data-id="block-0-83" data-level="0">
+<div class="block-content">Every page links to multiple other pages, creating a web of connections:</div>
+</div>
+<div class="block" data-id="block-0-84" data-level="0">
+<div class="block-content">Index links to all main pages</div>
+</div>
+<div class="block" data-id="block-0-85" data-level="0">
+<div class="block-content">Concept pages link to each other</div>
+</div>
+<div class="block" data-id="block-0-86" data-level="0">
+<div class="block-content">Documentation pages cross-reference</div>
+</div>
+<div class="block" data-id="block-0-87" data-level="0">
+<div class="block-content">Tutorial links to reference docs</div>
+</div>
+<div class="block" data-id="block-0-88" data-level="0">
+<div class="block-content">### 10. Asset References ✅</div>
+</div>
+<div class="block" data-id="block-0-89" data-level="0">
+<div class="block-content">Test asset file in <code>assets/</code></div>
+</div>
+<div class="block" data-id="block-0-90" data-level="0">
+<div class="block-content">Can be referenced from pages</div>
+</div>
+<div class="block" data-id="block-0-91" data-level="0">
+<div class="block-content">Should be copied during publishing</div>
+</div>
+<div class="block" data-id="block-0-92" data-level="0">
+<div class="block-content">## Link Graph Structure</div>
+</div>
+<div class="block" data-id="block-0-93" data-level="0">
+<div class="block-content">### Hub Structure (Index as Central Hub)</div>
+</div>
+<div class="block" data-id="block-0-94" data-level="0">
+<div class="block-content">```</div>
+<div class="block-children">
+<div class="block" data-id="block-1-0" data-level="10">
+<div class="block-content">index</div>
+<div class="block-children">
+<div class="block" data-id="block-11-0" data-level="11">
+<div class="block-content">|</div>
+</div>
+</div>
+</div>
+<div class="block" data-id="block-1-1" data-level="3">
+<div class="block-content">+---------------+---------------+</div>
+</div>
+<div class="block" data-id="block-1-2" data-level="3">
+<div class="block-content">|               |               |</div>
+</div>
+</div>
+</div>
+<div class="block" data-id="block-0-95" data-level="0">
+<div class="block-content">getting-started   features      api-reference</div>
+<div class="block-children">
+<div class="block" data-id="block-1-0" data-level="3">
+<div class="block-content">|               |               |</div>
+</div>
+<div class="block" data-id="block-1-1" data-level="3">
+<div class="block-content">+-------+-------+-------+-------+</div>
+<div class="block-children">
+<div class="block" data-id="block-4-0" data-level="7">
+<div class="block-content">|               |</div>
+</div>
+<div class="block" data-id="block-4-1" data-level="5">
+<div class="block-content">changelog      concepts/</div>
+<div class="block-children">
+<div class="block" data-id="block-6-0" data-level="15">
+<div class="block-content">|</div>
+</div>
+<div class="block" data-id="block-6-1" data-level="10">
+<div class="block-content">+---------+---------+</div>
+</div>
+<div class="block" data-id="block-6-2" data-level="10">
+<div class="block-content">|         |         |</div>
+</div>
+<div class="block" data-id="block-6-3" data-level="8">
+<div class="block-content">blocks    pages     links</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="block" data-id="block-0-96" data-level="0">
+<div class="block-content">```</div>
+</div>
+<div class="block" data-id="block-0-97" data-level="0">
+<div class="block-content">### Most Connected Pages</div>
+</div>
+<div class="block" data-id="block-0-98" data-level="0">
+<div class="block-content">1. <strong>index</strong> (9 outgoing links) - Central hub</div>
+</div>
+<div class="block" data-id="block-0-99" data-level="0">
+<div class="block-content">2. <strong>links</strong> (10+ outgoing links) - Link documentation</div>
+</div>
+<div class="block" data-id="block-0-100" data-level="0">
+<div class="block-content">3. <strong>features</strong> (8 outgoing links) - Feature showcase</div>
+</div>
+<div class="block" data-id="block-0-101" data-level="0">
+<div class="block-content">4. <strong>api-reference</strong> (7 outgoing links) - Technical docs</div>
+</div>
+<div class="block" data-id="block-0-102" data-level="0">
+<div class="block-content">### Most Referenced Pages (Backlinks)</div>
+</div>
+<div class="block" data-id="block-0-103" data-level="0">
+<div class="block-content">1. <strong>getting-started</strong> (8 backlinks)</div>
+</div>
+<div class="block" data-id="block-0-104" data-level="0">
+<div class="block-content">2. <strong>concepts/blocks</strong> (7 backlinks)</div>
+</div>
+<div class="block" data-id="block-0-105" data-level="0">
+<div class="block-content">3. <strong>features</strong> (6 backlinks)</div>
+</div>
+<div class="block" data-id="block-0-106" data-level="0">
+<div class="block-content">4. <strong>api-reference</strong> (6 backlinks)</div>
+</div>
+<div class="block" data-id="block-0-107" data-level="0">
+<div class="block-content">## Parser Testing Checklist</div>
+</div>
+<div class="block" data-id="block-0-108" data-level="0">
+<div class="block-content">Use this graph to verify:</div>
+</div>
+<div class="block" data-id="block-0-109" data-level="0">
+<div class="block-content">[ ] Frontmatter YAML parsing</div>
+</div>
+<div class="block" data-id="block-0-110" data-level="0">
+<div class="block-content">[ ] Wiki-link resolution</div>
+</div>
+<div class="block" data-id="block-0-111" data-level="0">
+<div class="block-content">[ ] Alias link handling</div>
+</div>
+<div class="block" data-id="block-0-112" data-level="0">
+<div class="block-content">[ ] Nested page paths</div>
+</div>
+<div class="block" data-id="block-0-113" data-level="0">
+<div class="block-content">[ ] Hashtag extraction</div>
+</div>
+<div class="block" data-id="block-0-114" data-level="0">
+<div class="block-content">[ ] Block hierarchy parsing</div>
+</div>
+<div class="block" data-id="block-0-115" data-level="0">
+<div class="block-content">[ ] Code block language detection</div>
+</div>
+<div class="block" data-id="block-0-116" data-level="0">
+<div class="block-content">[ ] TODO item detection</div>
+</div>
+<div class="block" data-id="block-0-117" data-level="0">
+<div class="block-content">[ ] Rich text formatting</div>
+</div>
+<div class="block" data-id="block-0-118" data-level="0">
+<div class="block-content">[ ] Block property parsing</div>
+</div>
+<div class="block" data-id="block-0-119" data-level="0">
+<div class="block-content">[ ] Asset file handling</div>
+</div>
+<div class="block" data-id="block-0-120" data-level="0">
+<div class="block-content">[ ] Config.edn parsing</div>
+</div>
+<div class="block" data-id="block-0-121" data-level="0">
+<div class="block-content">[ ] Bidirectional link creation</div>
+</div>
+<div class="block" data-id="block-0-122" data-level="0">
+<div class="block-content">[ ] Cross-reference resolution</div>
+</div>
+<div class="block" data-id="block-0-123" data-level="0">
+<div class="block-content">[ ] Deep nesting (10+ levels)</div>
+</div>
+<div class="block" data-id="block-0-124" data-level="0">
+<div class="block-content">## Usage</div>
+</div>
+<div class="block" data-id="block-0-125" data-level="0">
+<div class="block-content">### Testing Publishing</div>
+</div>
+<div class="block" data-id="block-0-126" data-level="0">
+<div class="block-content">```bash</div>
+</div>
+<div class="block" data-id="block-0-127" data-level="0">
+<div class="block-content"># Publish this test graph</div>
+</div>
+<div class="block" data-id="block-0-128" data-level="0">
+<div class="block-content">cd /home/devuser/workspace/publish-spa-rust-wasm</div>
+</div>
+<div class="block" data-id="block-0-129" data-level="0">
+<div class="block-content">npm run publish -- --input ./test-graph --output ./test-output</div>
+</div>
+<div class="block" data-id="block-0-130" data-level="0">
+<div class="block-content"># Verify output</div>
+</div>
+<div class="block" data-id="block-0-131" data-level="0">
+<div class="block-content">ls -la test-output/</div>
+</div>
+<div class="block" data-id="block-0-132" data-level="0">
+<div class="block-content">```</div>
+</div>
+<div class="block" data-id="block-0-133" data-level="0">
+<div class="block-content">### Expected Output</div>
+</div>
+<div class="block" data-id="block-0-134" data-level="0">
+<div class="block-content">After publishing, you should see:</div>
+</div>
+<div class="block" data-id="block-0-135" data-level="0">
+<div class="block-content">```</div>
+</div>
+<div class="block" data-id="block-0-136" data-level="0">
+<div class="block-content">test-output/</div>
+</div>
+<div class="block" data-id="block-0-137" data-level="0">
+<div class="block-content">├── index.html</div>
+</div>
+<div class="block" data-id="block-0-138" data-level="0">
+<div class="block-content">├── getting-started.html</div>
+</div>
+<div class="block" data-id="block-0-139" data-level="0">
+<div class="block-content">├── features.html</div>
+</div>
+<div class="block" data-id="block-0-140" data-level="0">
+<div class="block-content">├── api-reference.html</div>
+</div>
+<div class="block" data-id="block-0-141" data-level="0">
+<div class="block-content">├── changelog.html</div>
+</div>
+<div class="block" data-id="block-0-142" data-level="0">
+<div class="block-content">├── concepts/</div>
+</div>
+<div class="block" data-id="block-0-143" data-level="0">
+<div class="block-content">│   ├── blocks.html</div>
+</div>
+<div class="block" data-id="block-0-144" data-level="0">
+<div class="block-content">│   ├── pages.html</div>
+</div>
+<div class="block" data-id="block-0-145" data-level="0">
+<div class="block-content">│   └── links.html</div>
+</div>
+<div class="block" data-id="block-0-146" data-level="0">
+<div class="block-content">├── assets/</div>
+</div>
+<div class="block" data-id="block-0-147" data-level="0">
+<div class="block-content">│   └── test.txt</div>
+</div>
+<div class="block" data-id="block-0-148" data-level="0">
+<div class="block-content">└── [CSS/JS files]</div>
+</div>
+<div class="block" data-id="block-0-149" data-level="0">
+<div class="block-content">```</div>
+</div>
+<div class="block" data-id="block-0-150" data-level="0">
+<div class="block-content">### Verification Steps</div>
+</div>
+<div class="block" data-id="block-0-151" data-level="0">
+<div class="block-content">1. <strong>All pages generated</strong>: 9 HTML files</div>
+</div>
+<div class="block" data-id="block-0-152" data-level="0">
+<div class="block-content">2. <strong>Links resolved</strong>: All <code><a href="links.html" class="wiki-link">links</a></code> work</div>
+</div>
+<div class="block" data-id="block-0-153" data-level="0">
+<div class="block-content">3. <strong>Assets copied</strong>: <code>test.txt</code> in output</div>
+</div>
+<div class="block" data-id="block-0-154" data-level="0">
+<div class="block-content">4. <strong>Hierarchy preserved</strong>: <code>concepts/</code> subdirectory</div>
+</div>
+<div class="block" data-id="block-0-155" data-level="0">
+<div class="block-content">5. <strong>Frontmatter processed</strong>: Titles and tags extracted</div>
+</div>
+<div class="block" data-id="block-0-156" data-level="0">
+<div class="block-content">6. <strong>Code highlighted</strong>: Syntax highlighting applied</div>
+</div>
+<div class="block" data-id="block-0-157" data-level="0">
+<div class="block-content">7. <strong>Formatting preserved</strong>: Bold, italic, etc. rendered</div>
+</div>
+<div class="block" data-id="block-0-158" data-level="0">
+<div class="block-content">## Test Cases</div>
+</div>
+<div class="block" data-id="block-0-159" data-level="0">
+<div class="block-content">This graph provides test data for:</div>
+</div>
+<div class="block" data-id="block-0-160" data-level="0">
+<div class="block-content">1. <strong>Small graph performance</strong> (9 pages)</div>
+</div>
+<div class="block" data-id="block-0-161" data-level="0">
+<div class="block-content">2. <strong>Link resolution accuracy</strong> (50+ links)</div>
+</div>
+<div class="block" data-id="block-0-162" data-level="0">
+<div class="block-content">3. <strong>Nesting depth handling</strong> (10 levels)</div>
+</div>
+<div class="block" data-id="block-0-163" data-level="0">
+<div class="block-content">4. <strong>Code block rendering</strong> (multiple languages)</div>
+</div>
+<div class="block" data-id="block-0-164" data-level="0">
+<div class="block-content">5. <strong>Frontmatter parsing</strong> (various formats)</div>
+</div>
+<div class="block" data-id="block-0-165" data-level="0">
+<div class="block-content">6. <strong>Asset handling</strong> (file copying)</div>
+</div>
+<div class="block" data-id="block-0-166" data-level="0">
+<div class="block-content">7. <strong>Navigation generation</strong> (hub structure)</div>
+</div>
+<div class="block" data-id="block-0-167" data-level="0">
+<div class="block-content">8. <strong>Cross-reference validation</strong> (bidirectional links)</div>
+</div>
+<div class="block" data-id="block-0-168" data-level="0">
+<div class="block-content">## Metrics for Benchmarking</div>
+</div>
+<div class="block" data-id="block-0-169" data-level="0">
+<div class="block-content">Expected performance targets:</div>
+</div>
+<div class="block" data-id="block-0-170" data-level="0">
+<div class="block-content"><strong>Parse time</strong>: &lt;50ms</div>
+</div>
+<div class="block" data-id="block-0-171" data-level="0">
+<div class="block-content"><strong>Link resolution</strong>: &lt;10ms</div>
+</div>
+<div class="block" data-id="block-0-172" data-level="0">
+<div class="block-content"><strong>HTML generation</strong>: &lt;100ms</div>
+</div>
+<div class="block" data-id="block-0-173" data-level="0">
+<div class="block-content"><strong>Asset copying</strong>: &lt;5ms</div>
+</div>
+<div class="block" data-id="block-0-174" data-level="0">
+<div class="block-content"><strong>Total time</strong>: &lt;200ms</div>
+</div>
+<div class="block" data-id="block-0-175" data-level="0">
+<div class="block-content">Memory usage:</div>
+</div>
+<div class="block" data-id="block-0-176" data-level="0">
+<div class="block-content"><strong>Peak memory</strong>: &lt;5MB</div>
+</div>
+<div class="block" data-id="block-0-177" data-level="0">
+<div class="block-content"><strong>Average memory</strong>: &lt;2MB</div>
+</div>
+<div class="block" data-id="block-0-178" data-level="0">
+<div class="block-content">## Extending the Test Graph</div>
+</div>
+<div class="block" data-id="block-0-179" data-level="0">
+<div class="block-content">To add more test cases:</div>
+</div>
+<div class="block" data-id="block-0-180" data-level="0">
+<div class="block-content">1. Create new pages in <code>pages/</code> or <code>pages/concepts/</code></div>
+</div>
+<div class="block" data-id="block-0-181" data-level="0">
+<div class="block-content">2. Add wiki-links to connect pages</div>
+</div>
+<div class="block" data-id="block-0-182" data-level="0">
+<div class="block-content">3. Include various content types</div>
+</div>
+<div class="block" data-id="block-0-183" data-level="0">
+<div class="block-content">4. Test edge cases (deep nesting, long pages, etc.)</div>
+</div>
+<div class="block" data-id="block-0-184" data-level="0">
+<div class="block-content">5. Update this README with new statistics</div>
+</div>
+<div class="block" data-id="block-0-185" data-level="0">
+<div class="block-content">## Known Edge Cases Tested</div>
+</div>
+<div class="block" data-id="block-0-186" data-level="0">
+<div class="block-content">✅ Deep block nesting (10 levels)</div>
+</div>
+<div class="block" data-id="block-0-187" data-level="0">
+<div class="block-content">✅ Multiple code block languages</div>
+</div>
+<div class="block" data-id="block-0-188" data-level="0">
+<div class="block-content">✅ Mixed content in nested blocks</div>
+</div>
+<div class="block" data-id="block-0-189" data-level="0">
+<div class="block-content">✅ Circular link references (safe)</div>
+</div>
+<div class="block" data-id="block-0-190" data-level="0">
+<div class="block-content">✅ Page aliases in frontmatter</div>
+</div>
+<div class="block" data-id="block-0-191" data-level="0">
+<div class="block-content">✅ Empty pages (none in this graph)</div>
+</div>
+<div class="block" data-id="block-0-192" data-level="0">
+<div class="block-content">✅ Large pages with many blocks</div>
+</div>
+<div class="block" data-id="block-0-193" data-level="0">
+<div class="block-content">✅ Nested directory structure</div>
+</div>
+<div class="block" data-id="block-0-194" data-level="0">
+<div class="block-content">## License</div>
+</div>
+<div class="block" data-id="block-0-195" data-level="0">
+<div class="block-content">This test graph is provided as example data for testing purposes.</div>
+</div>
+<div class="block" data-id="block-0-196" data-level="0">
+<div class="block-content">Use freely for development and testing of the publish-spa project.</div>
+</div>
+</div>
+</article>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>

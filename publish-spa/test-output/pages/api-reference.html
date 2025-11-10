@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>api-reference</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="container">
+<nav><a href="../index.html">← Back to Index</a></nav>
+<article data-path="pages/api-reference.md">
+<h1>api-reference</h1>
+<div class="properties">
+<div><strong>tags:</strong> api, reference, technical, documentation</div>
+<div><strong>title:</strong> API Reference</div>
+</div>
+<div class="tags">
+<span class="tag">#troubleshooting</span>
+<span class="tag">#performance</span>
+<span class="tag">#api</span>
+<span class="tag">#reference</span>
+<span class="tag">#technical</span>
+<span class="tag">#documentation</span>
+</div>
+<div class="blocks">
+<div class="block" data-id="block-0-0" data-level="0">
+<div class="block-content"># API Reference</div>
+</div>
+<div class="block" data-id="block-0-1" data-level="0">
+<div class="block-content">Technical documentation for the publish-spa WASM API.</div>
+</div>
+<div class="block" data-id="block-0-2" data-level="0">
+<div class="block-content">## JavaScript API</div>
+</div>
+<div class="block" data-id="block-0-3" data-level="0">
+<div class="block-content">### publish()</div>
+</div>
+<div class="block" data-id="block-0-4" data-level="0">
+<div class="block-content">Publishes a Logseq graph to static HTML.</div>
+</div>
+<div class="block" data-id="block-0-5" data-level="0">
+<div class="block-content">```javascript</div>
+</div>
+<div class="block" data-id="block-0-6" data-level="0">
+<div class="block-content">import { publish } from &<span class="tag">#x27</span>;publish-spa-wasm&<span class="tag">#x27</span>;;</div>
+</div>
+<div class="block" data-id="block-0-7" data-level="0">
+<div class="block-content">const stats = await publish({</div>
+<div class="block-children">
+<div class="block" data-id="block-1-0" data-level="2">
+<div class="block-content">inputDir: &<span class="tag">#x27</span>;/path/to/graph&<span class="tag">#x27</span>;,</div>
+</div>
+<div class="block" data-id="block-1-1" data-level="2">
+<div class="block-content">outputDir: &<span class="tag">#x27</span>;./output&<span class="tag">#x27</span>;,</div>
+</div>
+<div class="block" data-id="block-1-2" data-level="2">
+<div class="block-content">options: {</div>
+<div class="block-children">
+<div class="block" data-id="block-3-0" data-level="4">
+<div class="block-content">theme: &<span class="tag">#x27</span>;auto&<span class="tag">#x27</span>;,</div>
+</div>
+<div class="block" data-id="block-3-1" data-level="4">
+<div class="block-content">baseUrl: &<span class="tag">#x27</span>;https://example.com&<span class="tag">#x27</span>;</div>
+</div>
+</div>
+</div>
+<div class="block" data-id="block-1-3" data-level="2">
+<div class="block-content">}</div>
+</div>
+</div>
+</div>
+<div class="block" data-id="block-0-8" data-level="0">
+<div class="block-content">});</div>
+</div>
+<div class="block" data-id="block-0-9" data-level="0">
+<div class="block-content">console.log(<code>Published ${stats.pageCount} pages</code>);</div>
+</div>
+<div class="block" data-id="block-0-10" data-level="0">
+<div class="block-content">```</div>
+</div>
+<div class="block" data-id="block-0-11" data-level="0">
+<div class="block-content"><strong>Parameters:</strong></div>
+</div>
+<div class="block" data-id="block-0-12" data-level="0">
+<div class="block-content"><code>inputDir</code> (string): Path to Logseq graph directory</div>
+</div>
+<div class="block" data-id="block-0-13" data-level="0">
+<div class="block-content"><code>outputDir</code> (string): Path for HTML output</div>
+</div>
+<div class="block" data-id="block-0-14" data-level="0">
+<div class="block-content"><code>options</code> (object, optional):</div>
+<div class="block-children">
+<div class="block" data-id="block-1-0" data-level="1">
+<div class="block-content"><code>theme</code> (string): &<span class="tag">#x27</span>;light&<span class="tag">#x27</span>;, &<span class="tag">#x27</span>;dark&<span class="tag">#x27</span>;, or &<span class="tag">#x27</span>;auto&<span class="tag">#x27</span>;</div>
+</div>
+<div class="block" data-id="block-1-1" data-level="1">
+<div class="block-content"><code>baseUrl</code> (string): Base URL for deployment</div>
+</div>
+</div>
+</div>
+<div class="block" data-id="block-0-15" data-level="0">
+<div class="block-content"><strong>Returns:</strong> <code>PublishStats</code></div>
+</div>
+<div class="block" data-id="block-0-16" data-level="0">
+<div class="block-content"><code>pageCount</code> (number): Number of pages processed</div>
+</div>
+<div class="block" data-id="block-0-17" data-level="0">
+<div class="block-content"><code>linkCount</code> (number): Number of links resolved</div>
+</div>
+<div class="block" data-id="block-0-18" data-level="0">
+<div class="block-content"><code>assetCount</code> (number): Number of assets copied</div>
+</div>
+<div class="block" data-id="block-0-19" data-level="0">
+<div class="block-content"><code>duration</code> (number): Processing time in milliseconds</div>
+</div>
+<div class="block" data-id="block-0-20" data-level="0">
+<div class="block-content">### parseGraph()</div>
+</div>
+<div class="block" data-id="block-0-21" data-level="0">
+<div class="block-content">Parses a Logseq graph into a structured format.</div>
+</div>
+<div class="block" data-id="block-0-22" data-level="0">
+<div class="block-content">```javascript</div>
+</div>
+<div class="block" data-id="block-0-23" data-level="0">
+<div class="block-content">import { parseGraph } from &<span class="tag">#x27</span>;publish-spa-wasm&<span class="tag">#x27</span>;;</div>
+</div>
+<div class="block" data-id="block-0-24" data-level="0">
+<div class="block-content">const graph = await parseGraph(&<span class="tag">#x27</span>;/path/to/graph&<span class="tag">#x27</span>;);</div>
+</div>
+<div class="block" data-id="block-0-25" data-level="0">
+<div class="block-content">console.log(<code>Found ${graph.pages.length} pages</code>);</div>
+</div>
+<div class="block" data-id="block-0-26" data-level="0">
+<div class="block-content">console.log(<code>Found ${graph.links.length} links</code>);</div>
+</div>
+<div class="block" data-id="block-0-27" data-level="0">
+<div class="block-content">```</div>
+</div>
+<div class="block" data-id="block-0-28" data-level="0">
+<div class="block-content"><strong>Parameters:</strong></div>
+</div>
+<div class="block" data-id="block-0-29" data-level="0">
+<div class="block-content"><code>graphPath</code> (string): Path to Logseq graph</div>
+</div>
+<div class="block" data-id="block-0-30" data-level="0">
+<div class="block-content"><strong>Returns:</strong> <code>Graph</code></div>
+</div>
+<div class="block" data-id="block-0-31" data-level="0">
+<div class="block-content"><code>pages</code> (Page[]): Array of page objects</div>
+</div>
+<div class="block" data-id="block-0-32" data-level="0">
+<div class="block-content"><code>links</code> (Link[]): Array of link objects</div>
+</div>
+<div class="block" data-id="block-0-33" data-level="0">
+<div class="block-content"><code>blocks</code> (Block[]): Array of block objects</div>
+</div>
+<div class="block" data-id="block-0-34" data-level="0">
+<div class="block-content">### Page Object</div>
+</div>
+<div class="block" data-id="block-0-35" data-level="0">
+<div class="block-content">```typescript</div>
+</div>
+<div class="block" data-id="block-0-36" data-level="0">
+<div class="block-content">interface Page {</div>
+<div class="block-children">
+<div class="block" data-id="block-1-0" data-level="2">
+<div class="block-content">title: string;</div>
+</div>
+<div class="block" data-id="block-1-1" data-level="2">
+<div class="block-content">content: string;</div>
+</div>
+<div class="block" data-id="block-1-2" data-level="2">
+<div class="block-content">metadata: Metadata;</div>
+</div>
+<div class="block" data-id="block-1-3" data-level="2">
+<div class="block-content">blocks: Block[];</div>
+</div>
+<div class="block" data-id="block-1-4" data-level="2">
+<div class="block-content">links: string[];</div>
+</div>
+<div class="block" data-id="block-1-5" data-level="2">
+<div class="block-content">tags: string[];</div>
+</div>
+</div>
+</div>
+<div class="block" data-id="block-0-37" data-level="0">
+<div class="block-content">}</div>
+</div>
+<div class="block" data-id="block-0-38" data-level="0">
+<div class="block-content">```</div>
+</div>
+<div class="block" data-id="block-0-39" data-level="0">
+<div class="block-content">### Block Object</div>
+</div>
+<div class="block" data-id="block-0-40" data-level="0">
+<div class="block-content">```typescript</div>
+</div>
+<div class="block" data-id="block-0-41" data-level="0">
+<div class="block-content">interface Block {</div>
+<div class="block-children">
+<div class="block" data-id="block-1-0" data-level="2">
+<div class="block-content">id: string;</div>
+</div>
+<div class="block" data-id="block-1-1" data-level="2">
+<div class="block-content">content: string;</div>
+</div>
+<div class="block" data-id="block-1-2" data-level="2">
+<div class="block-content">level: number;</div>
+</div>
+<div class="block" data-id="block-1-3" data-level="2">
+<div class="block-content">children: Block[];</div>
+</div>
+<div class="block" data-id="block-1-4" data-level="2">
+<div class="block-content">properties: Record&lt;string, any&gt;;</div>
+</div>
+</div>
+</div>
+<div class="block" data-id="block-0-42" data-level="0">
+<div class="block-content">}</div>
+</div>
+<div class="block" data-id="block-0-43" data-level="0">
+<div class="block-content">```</div>
+</div>
+<div class="block" data-id="block-0-44" data-level="0">
+<div class="block-content">## Rust API</div>
+</div>
+<div class="block" data-id="block-0-45" data-level="0">
+<div class="block-content">For advanced users and contributors.</div>
+</div>
+<div class="block" data-id="block-0-46" data-level="0">
+<div class="block-content">### Core Types</div>
+</div>
+<div class="block" data-id="block-0-47" data-level="0">
+<div class="block-content">```rust</div>
+</div>
+<div class="block" data-id="block-0-48" data-level="0">
+<div class="block-content">pub struct Graph {</div>
+<div class="block-children">
+<div class="block" data-id="block-1-0" data-level="2">
+<div class="block-content">pub pages: Vec&lt;Page&gt;,</div>
+</div>
+<div class="block" data-id="block-1-1" data-level="2">
+<div class="block-content">pub links: Vec&lt;Link&gt;,</div>
+</div>
+</div>
+</div>
+<div class="block" data-id="block-0-49" data-level="0">
+<div class="block-content">}</div>
+</div>
+<div class="block" data-id="block-0-50" data-level="0">
+<div class="block-content">pub struct Page {</div>
+<div class="block-children">
+<div class="block" data-id="block-1-0" data-level="2">
+<div class="block-content">pub title: String,</div>
+</div>
+<div class="block" data-id="block-1-1" data-level="2">
+<div class="block-content">pub content: String,</div>
+</div>
+<div class="block" data-id="block-1-2" data-level="2">
+<div class="block-content">pub metadata: Metadata,</div>
+</div>
+<div class="block" data-id="block-1-3" data-level="2">
+<div class="block-content">pub blocks: Vec&lt;Block&gt;,</div>
+</div>
+</div>
+</div>
+<div class="block" data-id="block-0-51" data-level="0">
+<div class="block-content">}</div>
+</div>
+<div class="block" data-id="block-0-52" data-level="0">
+<div class="block-content">pub struct Block {</div>
+<div class="block-children">
+<div class="block" data-id="block-1-0" data-level="2">
+<div class="block-content">pub id: String,</div>
+</div>
+<div class="block" data-id="block-1-1" data-level="2">
+<div class="block-content">pub content: String,</div>
+</div>
+<div class="block" data-id="block-1-2" data-level="2">
+<div class="block-content">pub level: usize,</div>
+</div>
+<div class="block" data-id="block-1-3" data-level="2">
+<div class="block-content">pub children: Vec&lt;Block&gt;,</div>
+</div>
+</div>
+</div>
+<div class="block" data-id="block-0-53" data-level="0">
+<div class="block-content">}</div>
+</div>
+<div class="block" data-id="block-0-54" data-level="0">
+<div class="block-content">```</div>
+</div>
+<div class="block" data-id="block-0-55" data-level="0">
+<div class="block-content">### Publishing</div>
+</div>
+<div class="block" data-id="block-0-56" data-level="0">
+<div class="block-content">```rust</div>
+</div>
+<div class="block" data-id="block-0-57" data-level="0">
+<div class="block-content">use publish_spa::Publisher;</div>
+</div>
+<div class="block" data-id="block-0-58" data-level="0">
+<div class="block-content">let publisher = Publisher::new(config);</div>
+</div>
+<div class="block" data-id="block-0-59" data-level="0">
+<div class="block-content">let stats = publisher.publish(input_dir, output_dir)?;</div>
+</div>
+<div class="block" data-id="block-0-60" data-level="0">
+<div class="block-content">println!(&quot;Published {} pages&quot;, stats.page_count);</div>
+</div>
+<div class="block" data-id="block-0-61" data-level="0">
+<div class="block-content">```</div>
+</div>
+<div class="block" data-id="block-0-62" data-level="0">
+<div class="block-content">## CLI Usage</div>
+</div>
+<div class="block" data-id="block-0-63" data-level="0">
+<div class="block-content">Command-line interface for publishing.</div>
+</div>
+<div class="block" data-id="block-0-64" data-level="0">
+<div class="block-content">```bash</div>
+</div>
+<div class="block" data-id="block-0-65" data-level="0">
+<div class="block-content"># Basic usage</div>
+</div>
+<div class="block" data-id="block-0-66" data-level="0">
+<div class="block-content">publish-spa --input ./graph --output ./dist</div>
+</div>
+<div class="block" data-id="block-0-67" data-level="0">
+<div class="block-content"># With options</div>
+</div>
+<div class="block" data-id="block-0-68" data-level="0">
+<div class="block-content">publish-spa \</div>
+<div class="block-children">
+<div class="block" data-id="block-1-0" data-level="2">
+<div class="block-content">--input ./graph \</div>
+</div>
+<div class="block" data-id="block-1-1" data-level="2">
+<div class="block-content">--output ./dist \</div>
+</div>
+<div class="block" data-id="block-1-2" data-level="2">
+<div class="block-content">--theme dark \</div>
+</div>
+<div class="block" data-id="block-1-3" data-level="2">
+<div class="block-content">--base-url https://example.com</div>
+</div>
+</div>
+</div>
+<div class="block" data-id="block-0-69" data-level="0">
+<div class="block-content"># Show help</div>
+</div>
+<div class="block" data-id="block-0-70" data-level="0">
+<div class="block-content">publish-spa --help</div>
+</div>
+<div class="block" data-id="block-0-71" data-level="0">
+<div class="block-content">```</div>
+</div>
+<div class="block" data-id="block-0-72" data-level="0">
+<div class="block-content">### CLI Options</div>
+</div>
+<div class="block" data-id="block-0-73" data-level="0">
+<div class="block-content"><code>--input, -i</code>: Input graph directory (required)</div>
+</div>
+<div class="block" data-id="block-0-74" data-level="0">
+<div class="block-content"><code>--output, -o</code>: Output directory (default: <code>./output</code>)</div>
+</div>
+<div class="block" data-id="block-0-75" data-level="0">
+<div class="block-content"><code>--theme, -t</code>: Color theme (default: <code>auto</code>)</div>
+</div>
+<div class="block" data-id="block-0-76" data-level="0">
+<div class="block-content"><code>--base-url, -b</code>: Base URL for deployment</div>
+</div>
+<div class="block" data-id="block-0-77" data-level="0">
+<div class="block-content"><code>--verbose, -v</code>: Enable verbose logging</div>
+</div>
+<div class="block" data-id="block-0-78" data-level="0">
+<div class="block-content"><code>--help, -h</code>: Show help message</div>
+</div>
+<div class="block" data-id="block-0-79" data-level="0">
+<div class="block-content">## Configuration</div>
+</div>
+<div class="block" data-id="block-0-80" data-level="0">
+<div class="block-content">### config.edn</div>
+</div>
+<div class="block" data-id="block-0-81" data-level="0">
+<div class="block-content">Configure publishing behavior in <code>logseq/config.edn</code>:</div>
+</div>
+<div class="block" data-id="block-0-82" data-level="0">
+<div class="block-content">```clojure</div>
+</div>
+<div class="block" data-id="block-0-83" data-level="0">
+<div class="block-content">{:publishing {</div>
+<div class="block-children">
+<div class="block" data-id="block-1-0" data-level="1">
+<div class="block-content">:theme &quot;auto&quot;</div>
+</div>
+<div class="block" data-id="block-1-1" data-level="1">
+<div class="block-content">:exclude-pages [&quot;private&quot;]</div>
+</div>
+<div class="block" data-id="block-1-2" data-level="1">
+<div class="block-content">:include-assets true</div>
+</div>
+<div class="block" data-id="block-1-3" data-level="1">
+<div class="block-content">:generate-index true</div>
+</div>
+</div>
+</div>
+<div class="block" data-id="block-0-84" data-level="0">
+<div class="block-content">}}</div>
+</div>
+<div class="block" data-id="block-0-85" data-level="0">
+<div class="block-content">```</div>
+</div>
+<div class="block" data-id="block-0-86" data-level="0">
+<div class="block-content">## Error Handling</div>
+</div>
+<div class="block" data-id="block-0-87" data-level="0">
+<div class="block-content">All API functions return <code>Result</code> types in Rust and throw exceptions in JavaScript.</div>
+</div>
+<div class="block" data-id="block-0-88" data-level="0">
+<div class="block-content">```javascript</div>
+</div>
+<div class="block" data-id="block-0-89" data-level="0">
+<div class="block-content">try {</div>
+<div class="block-children">
+<div class="block" data-id="block-1-0" data-level="2">
+<div class="block-content">await publish({ inputDir: &<span class="tag">#x27</span>;./graph&<span class="tag">#x27</span>;, outputDir: &<span class="tag">#x27</span>;./dist&<span class="tag">#x27</span>; });</div>
+</div>
+</div>
+</div>
+<div class="block" data-id="block-0-90" data-level="0">
+<div class="block-content">} catch (error) {</div>
+<div class="block-children">
+<div class="block" data-id="block-1-0" data-level="2">
+<div class="block-content">console.error(&<span class="tag">#x27</span>;Publishing failed:&<span class="tag">#x27</span>;, error.message);</div>
+</div>
+</div>
+</div>
+<div class="block" data-id="block-0-91" data-level="0">
+<div class="block-content">}</div>
+</div>
+<div class="block" data-id="block-0-92" data-level="0">
+<div class="block-content">```</div>
+</div>
+<div class="block" data-id="block-0-93" data-level="0">
+<div class="block-content">## Troubleshooting</div>
+</div>
+<div class="block" data-id="block-0-94" data-level="0">
+<div class="block-content">### Common Errors</div>
+</div>
+<div class="block" data-id="block-0-95" data-level="0">
+<div class="block-content"><strong><code>GraphNotFound</code></strong>: Input directory doesn&<span class="tag">#x27</span>;t exist or isn&<span class="tag">#x27</span>;t a valid Logseq graph</div>
+</div>
+<div class="block" data-id="block-0-96" data-level="0">
+<div class="block-content"><strong>Solution</strong>: Check the path and ensure <code>pages/</code> directory exists</div>
+</div>
+<div class="block" data-id="block-0-97" data-level="0">
+<div class="block-content"><strong><code>ParseError</code></strong>: Failed to parse a page</div>
+</div>
+<div class="block" data-id="block-0-98" data-level="0">
+<div class="block-content"><strong>Solution</strong>: Check for malformed markdown or invalid frontmatter</div>
+</div>
+<div class="block" data-id="block-0-99" data-level="0">
+<div class="block-content"><strong><code>LinkResolutionError</code></strong>: Failed to resolve a <a href="link.html" class="wiki-link">link</a></div>
+</div>
+<div class="block" data-id="block-0-100" data-level="0">
+<div class="block-content"><strong>Solution</strong>: Ensure linked pages exist in your graph</div>
+</div>
+<div class="block" data-id="block-0-101" data-level="0">
+<div class="block-content">See <a href="getting-started<span class="tag">#troubleshooting</span>.html" class="wiki-link">getting-started<span class="tag">#troubleshooting</span></a> for more help.</div>
+</div>
+<div class="block" data-id="block-0-102" data-level="0">
+<div class="block-content">## Examples</div>
+</div>
+<div class="block" data-id="block-0-103" data-level="0">
+<div class="block-content">See the test graph for working examples:</div>
+</div>
+<div class="block" data-id="block-0-104" data-level="0">
+<div class="block-content"><a href="index.html" class="wiki-link">index</a> - Home page structure</div>
+</div>
+<div class="block" data-id="block-0-105" data-level="0">
+<div class="block-content"><a href="features.html" class="wiki-link">features</a> - Rich content formatting</div>
+</div>
+<div class="block" data-id="block-0-106" data-level="0">
+<div class="block-content"><a href="concepts/blocks.html" class="wiki-link">concepts/blocks</a> - Block nesting</div>
+</div>
+<div class="block" data-id="block-0-107" data-level="0">
+<div class="block-content"><a href="concepts/links.html" class="wiki-link">concepts/links</a> - Link types</div>
+</div>
+<div class="block" data-id="block-0-108" data-level="0">
+<div class="block-content">## Performance Tips</div>
+</div>
+<div class="block" data-id="block-0-109" data-level="0">
+<div class="block-content">For best performance:</div>
+</div>
+<div class="block" data-id="block-0-110" data-level="0">
+<div class="block-content">1. Use relative paths when possible</div>
+</div>
+<div class="block" data-id="block-0-111" data-level="0">
+<div class="block-content">2. Minimize deep block nesting (&gt;10 levels)</div>
+</div>
+<div class="block" data-id="block-0-112" data-level="0">
+<div class="block-content">3. Optimize asset sizes before publishing</div>
+</div>
+<div class="block" data-id="block-0-113" data-level="0">
+<div class="block-content">4. Enable caching for repeated builds</div>
+</div>
+<div class="block" data-id="block-0-114" data-level="0">
+<div class="block-content">See <a href="features<span class="tag">#performance</span>.html" class="wiki-link">features<span class="tag">#performance</span></a> for benchmarks.</div>
+</div>
+<div class="block" data-id="block-0-115" data-level="0">
+<div class="block-content">---</div>
+</div>
+<div class="block" data-id="block-0-116" data-level="0">
+<div class="block-content"><span class="tag">#api</span> <span class="tag">#reference</span> <span class="tag">#technical</span> <span class="tag">#documentation</span></div>
+</div>
+</div>
+</article>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>

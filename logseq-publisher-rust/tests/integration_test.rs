@@ -1,6 +1,6 @@
-use logseq_publisher::parser::*;
-use logseq_publisher::graph::*;
-use logseq_publisher::exporter::*;
+use logseq_publisher_rust::parser::*;
+use logseq_publisher_rust::graph::*;
+use logseq_publisher_rust::exporter::*;
 use std::collections::HashMap;
 
 #[test]

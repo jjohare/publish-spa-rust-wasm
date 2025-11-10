@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logseq Publisher - Browser Example</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      padding: 40px;
+      max-width: 800px;
+      width: 100%;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 10px;
+      font-size: 32px;
+    }
+
+    .subtitle {
+      color: #666;
+      margin-bottom: 30px;
+      font-size: 16px;
+    }
+
+    .controls {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    }
+
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .output {
+      background: #f8f9fa;
+      border-radius: 8px;
+      padding: 20px;
+      min-height: 200px;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      border: 1px solid #e9ecef;
+    }
+
+    .info-box {
+      background: #e7f3ff;
+      border-left: 4px solid #2196F3;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 4px;
+    }
+
+    .info-box h3 {
+      color: #1976D2;
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+    .info-box p {
+      color: #555;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .stat-card {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #e9ecef;
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 28px;
+      font-weight: bold;
+      color: #667eea;
+      margin-bottom: 5px;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .loading {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: white;
+      animation: spin 1s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🦀 Logseq Publisher</h1>
+    <p class="subtitle">Browser WASM Example</p>
+
+    <div class="info-box">
+      <h3>⚠️ Note</h3>
+      <p>
+        This is a demonstration of the WASM module in the browser.
+        File system access is limited in browsers. For full functionality,
+        use the Node.js version or implement the File System Access API.
+      </p>
+    </div>
+
+    <div class="controls">
+      <button id="initBtn" onclick="initWasm()">Initialize WASM</button>
+      <button id="demoBtn" onclick="runDemo()" disabled>Run Demo</button>
+      <button id="clearBtn" onclick="clearOutput()">Clear Output</button>
+    </div>
+
+    <div class="output" id="output">Waiting for initialization...</div>
+
+    <div class="stats" id="stats" style="display: none;">
+      <div class="stat-card">
+        <div class="stat-value" id="pageCount">0</div>
+        <div class="stat-label">Pages</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="blockCount">0</div>
+        <div class="stat-label">Blocks</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="linkCount">0</div>
+        <div class="stat-label">Links</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="orphanCount">0</div>
+        <div class="stat-label">Orphans</div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    // NOTE: This would need to be adapted based on your actual module path
+    // import * as publishSpa from '../dist/index.js';
+
+    // For demonstration purposes, we'll simulate the API
+    window.publishSpaSimulated = {
+      initialized: false,
+
+      init: async function() {
+        await new Promise(resolve => setTimeout(resolve, 500));
+        this.initialized = true;
+      },
+
+      parseGraph: async function(inputDir) {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        return {
+          page_count: 42,
+          total_blocks: 256,
+          total_links: 128,
+          orphan_pages: 3
+        };
+      }
+    };
+
+    window.publishSpa = window.publishSpaSimulated;
+
+    window.log = function(message) {
+      const output = document.getElementById('output');
+      const timestamp = new Date().toLocaleTimeString();
+      output.textContent += `[${timestamp}] ${message}\n`;
+      output.scrollTop = output.scrollHeight;
+    };
+
+    window.clearOutput = function() {
+      document.getElementById('output').textContent = '';
+      document.getElementById('stats').style.display = 'none';
+    };
+
+    window.updateStats = function(stats) {
+      document.getElementById('pageCount').textContent = stats.page_count;
+      document.getElementById('blockCount').textContent = stats.total_blocks;
+      document.getElementById('linkCount').textContent = stats.total_links;
+      document.getElementById('orphanCount').textContent = stats.orphan_pages;
+      document.getElementById('stats').style.display = 'grid';
+    };
+
+    window.initWasm = async function() {
+      const btn = document.getElementById('initBtn');
+      const demoBtn = document.getElementById('demoBtn');
+
+      btn.disabled = true;
+      btn.innerHTML = '<span class="loading"></span> Initializing...';
+
+      try {
+        log('🚀 Initializing WASM module...');
+        await window.publishSpa.init();
+        log('✅ WASM initialized successfully!');
+        log('📦 Module ready to use');
+        log('');
+        log('Click "Run Demo" to see it in action.');
+
+        btn.innerHTML = '✓ Initialized';
+        demoBtn.disabled = false;
+      } catch (error) {
+        log(`❌ Error: ${error.message}`);
+        btn.disabled = false;
+        btn.innerHTML = 'Retry Initialization';
+      }
+    };
+
+    window.runDemo = async function() {
+      const btn = document.getElementById('demoBtn');
+      btn.disabled = true;
+      btn.innerHTML = '<span class="loading"></span> Running...';
+
+      try {
+        clearOutput();
+        log('🔍 Running demonstration...');
+        log('');
+
+        // Demo 1: Parse graph statistics
+        log('📊 Parsing graph statistics...');
+        const stats = await window.publishSpa.parseGraph('./demo-graph');
+
+        log(`  Found ${stats.page_count} pages`);
+        log(`  Total blocks: ${stats.total_blocks}`);
+        log(`  Total links: ${stats.total_links}`);
+        log(`  Orphan pages: ${stats.orphan_pages}`);
+        log('');
+
+        updateStats(stats);
+
+        // Calculate metrics
+        const avgBlocks = (stats.total_blocks / stats.page_count).toFixed(2);
+        const avgLinks = (stats.total_links / stats.page_count).toFixed(2);
+
+        log('📈 Metrics:');
+        log(`  Average blocks per page: ${avgBlocks}`);
+        log(`  Average links per page: ${avgLinks}`);
+        log('');
+
+        log('✨ Demo complete!');
+        log('');
+        log('💡 Tip: In a real application, you would:');
+        log('   1. Use File System Access API to read graph files');
+        log('   2. Process the graph with publish-spa WASM');
+        log('   3. Generate and download the static site');
+
+      } catch (error) {
+        log(`❌ Error: ${error.message}`);
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = 'Run Demo';
+      }
+    };
+
+    // Auto-init on load
+    window.addEventListener('load', () => {
+      log('🌐 Browser example loaded');
+      log('Click "Initialize WASM" to begin');
+    });
+  </script>
+</body>
+</html>
